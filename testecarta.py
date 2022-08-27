@@ -46,7 +46,7 @@ class deck:
     def __str__(self):
         return str(self.barai)
     def __repr__(self):
-        return str(__repr__())
+        return str(self.barai)
         
     def criar_deck(self):
         deck = []
@@ -67,7 +67,7 @@ class mao:
         cartas = []
         self.cartas = cartas
 
-    def comprar(self, deck):
+    def comprar(self, deck, cartas = 1):
         self.cartas.append(deck.comprar())
         
     def __str__(self):
@@ -85,5 +85,6 @@ class player:
         textin = "O jogador "
         textin+= self.nome
         textin+= " tem "
-        textin+= str(len(self.mao))
-        return()
+        textin+= str(len(self.mao.cartas))
+        textin+= " carta(s)"
+        return(textin)
